@@ -1,116 +1,116 @@
-/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* index.css */
+/* Styles de base */
+:root {
+  --purple-gradient: linear-gradient(to right, #9333ea, #db2777);
+}
 
-/* Fond général */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  background: linear-gradient(to bottom right, #2c0e60, #021635, #000);
-  min-height: 100vh;
+  @apply antialiased;
 }
 
-/* Liens */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Conteneurs */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Boutons */
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background: transparent;
-  color: inherit;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Inputs */
+/* Styles personnalisés pour le slider de volume */
 input[type="range"] {
-  width: 100%;
-  background: transparent;
-  accent-color: #a855f7;
+  -webkit-appearance: none;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  background-image: linear-gradient(#9333ea, #9333ea);
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #9333ea;
   cursor: pointer;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
 }
 
-/* Animation pour le bouton de lecture/pause */
-button:active {
-  transform: scale(0.95);
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #7e22ce;
 }
 
-/* Header */
-header {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
 
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
+/* Animations pour les cartes de musique */
+.transform {
+  transition-property: transform, box-shadow;
 }
 
-/* Animations */
-.hover-scale {
-  transition: transform 0.3s;
-}
-
-.hover-scale:hover {
+.hover\:scale-105:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Textes */
-.text-gradient {
-  background: linear-gradient(to right, #a855f7, #ec4899);
+/* Style du gradient de fond */
+.bg-gradient-to-br {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styles pour les boutons de contrôle */
+.player-controls button {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.player-controls button:hover {
+  @apply transform scale-110;
+}
+
+/* Style pour le texte dégradé */
+.bg-gradient-text {
+  background: var(--purple-gradient);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-.text-sm {
-  font-size: 0.875rem;
+/* Effet de flou pour les overlays */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.text-gray-400 {
-  color: #9ca3af;
+/* Styles pour les liens de navigation */
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.font-bold {
-  font-weight: bold;
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--purple-gradient);
+  transition: width 0.3s ease;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
-/* Arrière-plan des composants */
-.bg-black/30 {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.bg-white/10 {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Rangs */
-.ring-purple-500 {
-  box-shadow: 0 0 0 3px #a855f7;
+nav a:hover::after {
+  width: 100%;
 }
