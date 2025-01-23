@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { PlayIcon, PauseIcon, BackwardIcon, ForwardIcon, SpeakerWaveIcon } from '@heroicons/react/24/solid';
+import './index.css';
 
 const songs = [
   {
