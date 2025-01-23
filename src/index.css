@@ -3,6 +3,114 @@
 @tailwind components;
 @tailwind utilities;
 
+/* index.css */
+
+/* Fond général */
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom right, #2c0e60, #021635, #000);
+  min-height: 100vh;
+}
+
+/* Liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Conteneurs */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Boutons */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Inputs */
+input[type="range"] {
+  width: 100%;
+  background: transparent;
+  accent-color: #a855f7;
+  cursor: pointer;
+}
+
+/* Animation pour le bouton de lecture/pause */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Header */
+header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Animations */
+.hover-scale {
+  transition: transform 0.3s;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Textes */
+.text-gradient {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Arrière-plan des composants */
+.bg-black/30 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-white/10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Rangs */
+.ring-purple-500 {
+  box-shadow: 0 0 0 3px #a855f7;
 }
